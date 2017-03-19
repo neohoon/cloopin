@@ -1,0 +1,8 @@
+
+.container {
+    padding: 40px 40px;
+}
+
+.carousel-inner > .item > img {
+    margin: 0 auto;
+}
