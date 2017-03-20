@@ -71,18 +71,41 @@
         </a>
     </div>
 
+    <div class="container">
+        <h3 class="text-center">Text-To-Speech</h3>
+        <p class="text-center"><em>Click it and you can hear the TTS sound!</em></p>
+        <input type="text" class="form-control" id="tts-text" placeholder="Enter sentence">
+        </br>
+        <button type="submit" class="btn btn-default" id="tts-submit">Submit</button>
 
-    <div class="container text-center">
-        <h3>MindsLab</h3>
-        <p><em>We are AI platform company!</em></p>
-        <p>This is the demonstration page for R&D prototype systems</p>
+        <!--
+        <form action="index.html" method="post">
+            <div class="form-group">
+                <input type="text" class="form-control" id="tts-text" placeholder="Enter sentence">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+        -->
+
+
     </div>
 
-    <div class="container text-center">
+<script>
 
-    </div>
+$('#tts-submit').click(function(e) {
+    e.preventDefault();
 
+    // information to be sent to the server
+    var info = $('#tts-text').val();
 
+    $.ajax({
+        type: "POST",
+        url: '',
+        data: {foo: info}
+    });
+});
+
+</script>
 </body>
 </html>
 
