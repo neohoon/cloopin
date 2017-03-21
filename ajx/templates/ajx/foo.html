@@ -45,7 +45,10 @@ $(function() {
             data: {'csrfmiddlewaretoken': '{{ csrf_token }}'},
             success: function (data, textStatus) {
                 //alert(data, textStatus);
-                $('#output').html(data); // append to inner html
+                //$('#output').html(data); // append to inner html
+                //$("#wav_src").attr("src", data);
+                //$("#wav_src").get(0).play();
+
             },
             error: function(xhr, status, e) {
                 alert(status, e);
@@ -66,6 +69,9 @@ $(function() {
             count += 1;
             $('#output2').html("");
             $('#output2').html(count + " - You sent a ajax form post. Here's the data from server" + JSON.stringify(data)); // append to inner html
+
+            $('#tts-audio').attr('src', data[0].url)
+            playAudio()
         },
         error: function(xhr, status, e) {
             alert(status, e);
@@ -74,6 +80,18 @@ $(function() {
   });
 
 });
+
+
+function playAudio() {
+    var x = document.getElementById("tts-audio");
+    x.play();
+}
+
+function pauseAudio() {
+    var x = document.getElementById("tts-audio");
+    x.pause();
+}
+
 </script>
 </head>
 <body>
@@ -99,6 +117,17 @@ $(function() {
 
   <button id="myplay"> Play </button>
 
+  <br/>
+
+<audio id="tts-audio">
+  <source src="#" type="audio/wav">
+  Your browser does not support the audio element.
+</audio>
+
+    <!--
+    <button onclick="playAudio()" type="button">Play Audio</button>
+    <button onclick="pauseAudio()" type="button">Pause Audio</button>
+    -->
 
 </body>
 </html>
