@@ -31,3 +31,7 @@
     min-height: 300px;
 }
 
+#tts-error {
+    color: red;
+    font-weight: bold;
+}
