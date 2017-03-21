@@ -17,7 +17,9 @@ from django.conf.urls import url
 
 from . import views
 
+app_name = 'mindslab'
+
 urlpatterns = [
-    # url(r'^$', views.index, name='index'),
-    url(r'^$', views.PostExample.as_view(), name='test-start'),
+    url(r'^$', views.index, name='index'),
+    url(r'^run_tts_audio', views.run_tts_audio, name='run_tts_audio'),
 ]
