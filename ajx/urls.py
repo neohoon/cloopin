@@ -15,13 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url
 # from django.contrib import admin
-from django.views.generic import RedirectView
 
 from . import views
 
 urlpatterns = [
-    url(r'^$', RedirectView.as_view(url='/foo/')),
-
+    url(r'^$', views.foo, name='foo'),
     url(r'^foo', views.foo, name='foo'),
     url(r'^mygetview', views.my_get_view, name='my_get_view'),
     url(r'^mypostview', views.my_post_view, name='my_pos_tview'),

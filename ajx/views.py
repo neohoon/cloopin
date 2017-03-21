@@ -47,8 +47,8 @@ def my_ajax_form_view(request):
             print("field1 data: %s" % request.POST['field1'])
             print("field2 data: %s" % request.POST['field2'])
 
-            my_data = [{'foo': 1, 'baz': 2}]
-            return HttpResponse(json.dumps(my_data), mimetype="application/json")
+            my_data = [{'url': '/static/ajx/SPOUT.wav'}]
+            return HttpResponse(json.dumps(my_data), content_type="application/json")
 
     return render(request)
 
@@ -58,11 +58,11 @@ def foo(request, template='ajx/foo.html'):
 
 
 def play_audio_file(request):
-    fname = static('ajx/test.mp3')
+    fname = 'ajx/static/ajx/test.mp3'
     f = open(fname, "rb")
     response = HttpResponse()
     response.write(f.read())
-    response['Content-Type'] = 'audio/mp3'
+    response['Content-Type'] = 'audio/wav'
     response['Content-Length'] = os.path.getsize(fname)
     return response
 
