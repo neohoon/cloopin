@@ -18,12 +18,12 @@ from django.contrib import admin
 from django.views.generic import RedirectView
 
 urlpatterns = [
-    url(r'^$', RedirectView.as_view(url='/ajx/')),
+    url(r'^$', RedirectView.as_view(url='/ivsearch/')),
     url(r'^admin/', admin.site.urls),
 
     url(r'^mindslab/', include('mindslab.urls')),
     url(r'^ajx/', include('ajx.urls')),
 
-    url(r'^ivsearch/', include('apps.ivsearch.urls')),
+    url(r'^ivsearch/', include('ivsearch.urls')),
     # url(r'^search/', include('haystack.urls')),
 ]
