@@ -37,7 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'haystack',
+
     'mindslab.apps.MindslabConfig',
+    'ivsearch.apps.IvsearchConfig',
+
+    'ajx.apps.AjxConfig',
 ]
 
 MIDDLEWARE = [
@@ -119,3 +125,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine',
+        'URL': 'localhost:9200',
+        'INDEX_NAME': 'haystack',
+    },
+}
+
+AWS_ACCESS_KEY_ID = "AKIAJEKZV3LABXSMK6DA"
+AWS_SECRET_ACCESS_KEY = "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"
+AWS_S3_BUCKET_NAME = 'cloopin.ivs'
