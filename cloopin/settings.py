@@ -126,6 +126,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+MINDSLAB_STATIC_WAV_DIR = os.path.join(BASE_DIR, 'mindslab/static/mindslab/wav')
 
 HAYSTACK_CONNECTIONS = {
     'default': {

@@ -20,6 +20,7 @@ from django.views.generic import RedirectView
 urlpatterns = [
     url(r'^$', RedirectView.as_view(url='/ivsearch/')),
     url(r'^admin/', admin.site.urls),
+    url(r'^$', RedirectView.as_view(url='/mindslab/')),
 
     url(r'^mindslab/', include('mindslab.urls')),
     url(r'^ajx/', include('ajx.urls')),
