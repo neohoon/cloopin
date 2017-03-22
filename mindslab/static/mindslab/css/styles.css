@@ -33,5 +33,6 @@
 
 #tts-error {
     color: red;
-    font-weight: bold;
+    font-style: italic;
+    // font-weight: bold;
 }
