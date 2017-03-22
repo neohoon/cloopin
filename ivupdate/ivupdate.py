@@ -55,7 +55,7 @@ gLogger = None
 def prt(string):
     global DEBUG
     if DEBUG:
-        print string
+        print(string)
 
 
 def run_virtual_env(folder):
@@ -118,7 +118,7 @@ def postprocessing_youtube_srt(srt_in_filename, srt_out_filename):
                 else:
                     break
             except Exception as e:
-                print e
+                print(e)
         subs[idx].end = end_time
         idx += 1
 
@@ -137,7 +137,7 @@ def merge_all_scripts(srt_in_filename, srt_out_filename):
 
 
 def extract_texts_in_video(filename):
-    print filename
+    print(filename)
     return filename
 
 
@@ -226,7 +226,7 @@ def run_img_text_processing(video, in_vid_file_core):
         out_vid_file = '.'.join(in_vid_file.split('.')[:-1]) + ".avi"
         video_writer = cv2.VideoWriter(out_vid_file, cv2.VideoWriter_fourcc(*'XVID'), 0.4, (2*width, height), 1)
     except Exception as e:
-            print e
+            print(e)
             sys.exit()
 
     # Loop
@@ -351,7 +351,7 @@ def main(arg):
             else:
                 gLogger.info("   > Image text processing...")
                 img_text_filename, width, height, fps, frame_num = run_img_text_processing(video_list[k])
-                tar_video.update(img_text_on=True, width=width, height=height, fps= fps, frame_num=frame_num )
+                tar_video.update(img_text_on=True, width=width, height=height, fps=fps, frame_num=frame_num)
                 UtilityModel.save_to_img_text_db(img_text_filename, video_pk, video_db, img_text_db)
 
 ########################################################################################################################

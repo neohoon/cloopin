@@ -2,6 +2,7 @@
   <dictionary name="hoon">
     <words>
       <w>fname</w>
+      <w>ivsearch</w>
     </words>
   </dictionary>
 </component>
